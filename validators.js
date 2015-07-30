@@ -14,10 +14,10 @@ function checkSnils(checkedValue) {
 }
 
 function checkOgrn(chekedValue) {
-    //��� ���� � 13 ������
+    //Для тринадцатисимвольного ОГРН
     if (chekedValue.length == 13 && (chekedValue.slice(12, 13) == ((chekedValue.slice(0, -1)) % 11 + '').slice(-1))) {
         return true;
-        //��� ���� � 15 ������
+        //Для пятнадцатисимвольного ОГРН
     } else if (chekedValue.length == 15 && (chekedValue.slice(14, 15) == ((chekedValue.slice(0, -1)) % 13 + '').slice(-1))) {
         return true;
     }
