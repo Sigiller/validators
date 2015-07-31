@@ -1,5 +1,8 @@
 function checkSnils(checkedValue) {
-    var checkSum = parseInt(checkedValue.slice(9), 10);
+    var re = /[\+]|[\-]|[\ ]|[\_]\w+/g; //Регулярное выражение, которое находит разделительные символы, если такие есть в получаемом значении
+    var checkSum = parseInt(checkedValue.split(re).join('').slice(9), 10);
+    checkedValue = checkedValue.split(re).join('');
+    
     var sum = (checkedValue[0] * 9 + checkedValue[1] * 8 + checkedValue[2] * 7 + checkedValue[3] * 6 + checkedValue[4] * 5 + checkedValue[5] * 4 + checkedValue[6] * 3 + checkedValue[7] * 2 + checkedValue[8] * 1);
 
     if (sum < 100 && sum == checkSum) {
